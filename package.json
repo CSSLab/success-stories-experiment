@@ -27,7 +27,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "now-build": "react-scripts build",
+    "build-prod": "REACT_APP_DEV=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
