@@ -2,6 +2,7 @@
   "name": "predicting-unicorns",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://csslab.github.io/success-stories-experiment/",
   "dependencies": {
     "classnames": "^2.2.6",
     "core-js": "^3.3.5",
