@@ -38,6 +38,14 @@ const STEP_EXPERIMENT = "EXPERIMENT";
 const STEP_EXPLANATION = "EXPLANATION";
 const STEP_FINAL = "FINAL";
 
+let addRandomHITParams = () => {
+  let workerId = randomString().slice(0, 3);
+  window.location.search = queryString.stringify({
+    workerId,
+    assignmentId: "test"
+  });
+};
+
 export default function App() {
   let [appState, setAppState] = useState({});
   let [tracking, setTracking] = useState({});
@@ -52,6 +60,15 @@ export default function App() {
     parsed.assignmentId !== undefined &&
     parsed.workerId !== undefined &&
     !hitNotAccepted;
+
+  // This useEffect was added after the paper was accepted.
+  // It sets random HIT parameters for people who land on the app
+  // with no parameters set so they can easily test the app.
+  useEffect(() => {
+    if (!hitAccepted) {
+      addRandomHITParams();
+    }
+  }, [hitAccepted]);
 
   let WORKER_ID = parsed.workerId || "none";
 
@@ -301,13 +318,7 @@ function DebugShowConditions({ exp, setExperiment }) {
     );
   };
 
-  let addRandomHITParams = () => {
-    let workerId = randomString().slice(0, 3);
-    window.location.search = queryString.stringify({
-      workerId,
-      assignmentId: "test"
-    });
-  };
+  // the addRandomHITParams func was previously defined here
 
   return (
     <>

@@ -10,7 +10,9 @@ export default function IntroView({ hitAccepted, onComplete }) {
   useEffect(() => {
     let timeout;
     if (!showNextButton) {
-      let showNextTimeout = process.env.REACT_APP_DEV === "true" ? 500 : 5000;
+      // in the live experiment, the delay was set to 5000 ms.
+      // I just set it to 800 for the deployed example version
+      let showNextTimeout = process.env.REACT_APP_DEV === "true" ? 500 : 800;
       timeout = setTimeout(() => setShowNextButton(true), showNextTimeout);
     }
     return () => clearTimeout(timeout);
