@@ -6,6 +6,15 @@ Lifchits, Anderson, Goldstein, Hofman, Watts in JDM (2021)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Try it out!
+
+We've hosted a deployment of the experiment here:
+[https://csslab.github.io/success-stories-experiment](https://csslab.github.io/success-stories-experiment).
+
+The `workerId` URL parameter determines the experiment conditions. When you load
+the page with no parameters, a worker ID will be randomly initialized. Feel free
+to change it.
+
 ## Usage
 
 1. Ensure `yarn` is installed
